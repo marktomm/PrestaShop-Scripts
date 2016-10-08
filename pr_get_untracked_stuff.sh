@@ -1,10 +1,8 @@
 #!/bin/bash
 
-[ -x pr_init_config ] || {
-    >&2 echo "pr_init_config not found or no execute permissions"
-    exit 1;
-}
-
+# includes
+. sh_utils # includes fs-config
+checkFileExecOrExit pr_init_config
 . pr_init_config
 
 scp -r ${SERVER_USER}@${SERVER_HOST}:${SERVER_PATH}/img ${PRESTA_ROOT}.                                                                                                                                                                                                                                                     

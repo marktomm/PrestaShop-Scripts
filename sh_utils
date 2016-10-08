@@ -1,0 +1,49 @@
+log_out() {
+    echo $1
+}
+
+log_err() {
+    >&2 echo $1
+}
+
+to_stdout() {
+    echo $1
+}
+
+# arg1: path
+# arg2: error msg
+checkFileExecOrExit() {
+    local path=$1
+    local msg=$2
+    
+    [[ -z ${msg} ]] && msg="not found or no execute permissions"
+    
+    [[ -x ${path} ]] || {
+        log_err "${path} ${msg}"
+        exit 1;
+    }
+}
+
+
+
+# inlcude external fs_config and check
+checkFileExecOrExit fs_config
+
+. fs_config
+
+[[ -z ${DEFAULT_SUCCESS_RESP} ]] && {
+    log_err "fs env not configured"
+}
+# include external fs_config and check end
+
+
+
+evalOkOrExit() {
+    eval $1
+    local response=$?
+    
+    [[ ${response} -ne ${DEFAULT_SUCCESS_RESP} ]] && {
+        log_err "$1 failed"
+        exit 1
+    }
+}

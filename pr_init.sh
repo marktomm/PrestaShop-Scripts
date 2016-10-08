@@ -1,10 +1,8 @@
 #!/bin/bash
 
-[ -x pr_init_config ] || {
-    >&2 echo "pr_init_config not found or no execute permissions"
-    exit 1;
-}
-
+# includes
+. sh_utils # includes fs-config
+checkFileExecOrExit pr_init_config
 . pr_init_config
 
 # check db config env
@@ -16,13 +14,13 @@
     -z ${HOST_DOMAIN} || -z ${HOST_PHYS_URI} ||
     -z ${COOKIE_KEY} || -z ${COOKIE_IV} || -z ${RIJNDAEL_KEY} || -z ${RIJNDAEL_IV}]] && 
 {
-    >&2 echo 'db env not configured'
+    log_err 'db env not configured'
     exit 4;
 }
 # check db config env end
 
 [ -f ${PRESTA_ROOT}${DB_IMPORT} ] || {
-    >&2 echo "no such file as ${PRESTA_ROOT}${DB_IMPORT}"
+    log_err "no such file as ${PRESTA_ROOT}${DB_IMPORT}"
     exit 3;
 }
 
@@ -48,7 +46,7 @@ EOF
 settings_path=${PRESTA_ROOT}'config/settings.inc.php'
 
 [ -f ${settings_path} ] && {
-    >&2 echo "${settings_path} already exists"
+    log_err "${settings_path} already exists"
     exit 2;
 }
 
