@@ -1,0 +1,27 @@
+PRESTA_ROOT=../ # Prestashop root path from this script
+PRESTA_VERSION=1.6.1.6
+PRESTA_CREATION_DATE=2016-03-28
+
+
+#MYSQL_USER=
+#MYSQL_PASS=
+
+
+## used in scp, like 'scp -r ${SERVER_USER}@${SERVER_HOST}:${SERVER_PATH}'
+#SERVER_USER=
+#SERVER_HOST=
+#SERVER_PATH=
+
+## Prestashop DB name, user, password and sql file for import
+#DB_NAME=
+#DB_USER=
+#DB_PASS=
+#DB_IMPORT=sammuke.sql
+
+HOST_DOMAIN=192.168.0.18
+HOST_PHYS_URI=/sammuke/
+
+#COOKIE_KEY=
+#COOKIE_IV=
+#RIJNDAEL_KEY=
+#RIJNDAEL_IV=
