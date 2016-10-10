@@ -47,3 +47,13 @@ evalOkOrExit() {
         exit 1
     }
 }
+
+checkMysqlResponse() {
+    resp=$1
+    
+    [[ ${resp} -ne ${MYSQL_SUCCES_RESP} ]] && {
+        log_err "mysql returned ${resp}"
+        exit 129
+    }
+
+}

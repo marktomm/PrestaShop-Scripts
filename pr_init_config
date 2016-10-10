@@ -1,5 +1,5 @@
 PRESTA_ROOT=../ # Prestashop root path from this script
-PRESTA_VERSION=1.6.1.6
+PRESTA_VERSION=1.6.1.7
 PRESTA_CREATION_DATE=2016-03-28
 
 
@@ -11,15 +11,17 @@ PRESTA_CREATION_DATE=2016-03-28
 #SERVER_USER=
 #SERVER_HOST=
 #SERVER_PATH=
+#SSH_KEY_LOCATION=
 
 ## Prestashop DB name, user, password and sql file for import
 #DB_NAME=
 #DB_USER=
 #DB_PASS=
-#DB_IMPORT=path_to.sql
+#DB_IMPORT=
+#DB_SERVER=
 
-HOST_DOMAIN=192.168.0.18
-HOST_PHYS_URI=/sammuke/
+#HOST_DOMAIN=
+#HOST_PHYS_URI=
 
 #COOKIE_KEY=
 #COOKIE_IV=
