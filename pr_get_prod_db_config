@@ -8,5 +8,6 @@
 #DEV_DB_PASS=
 #DEV_SERVER=
 
-DEV_DB_HOST_DOMAIN=192.168.0.18
-DEV_DB_HOST_PHYS_URI=/sammuke/
+# updates prestashop db ps_shop_url
+DEV_DB_HOST_DOMAIN=10.0.0.102
+DEV_DB_HOST_PHYS_URI=/
