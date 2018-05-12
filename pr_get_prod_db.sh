@@ -1,4 +1,5 @@
 # copies production database to development database
+# on server: give grant to user for your development wan ip
 
 #!/bin/bash
 
